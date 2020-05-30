@@ -58,8 +58,7 @@ class Iq():
 
     def get_balance(self):
         '''Получаем текущий баланс'''
-        balance = self.browser.find_element_by_xpath(BALANCE).text
-        return balance
+        return self.browser.find_element_by_xpath(BALANCE).text
 
     def login_action(self):
         '''Логинимся'''
@@ -81,8 +80,7 @@ class Iq():
         linetext = bufferlength + "".ljust(253)
         linelength = win32gui.SendMessage(panel, win32con.EM_GETLINE, 0,
                                           linetext)
-        text = ''.join((linetext[:linelength]))
-        return text
+        return ''.join((linetext[:linelength]))
 
     def continue_button_exist(self):
         '''Ищем кнопку Продолжить торги'''
